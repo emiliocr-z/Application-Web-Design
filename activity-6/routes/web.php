@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index', [Controller::class, 'index'])->name('index');
+Route::get('/edit/{id}', [Controller::class, 'edit'])->name('edit');
+Route::get('/create', [Controller::class, 'create'])->name('create');
